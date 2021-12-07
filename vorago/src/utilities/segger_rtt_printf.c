@@ -49,8 +49,8 @@ File    : SEGGER_RTT_printf.c
 Purpose : Replacement for printf to write formatted data via RTT
 ----------------------------------------------------------------------
 */
-#include "vorago/utilities/segger_rtt.h"
-#include "vorago/utilities/segger_rtt_conf.h"
+#include "segger_rtt.h"
+#include "segger_rtt_conf.h"
 
 /*********************************************************************
  *

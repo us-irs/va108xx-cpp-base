@@ -19,11 +19,10 @@
  * DAMAGES, FOR ANY REASON WHATSOEVER.
  *
  ****************************************************************************************/
-#include "vorago/utilities/circular_buffer.h"
+#include "circular_buffer.h"
 
+#include <stdio.h>
 #include <string.h>
-
-#include "vorago/reb/reb_log.h"
 
 void VOR_CircularBuffer_Initialize(VOR_CIRCULAR_BUFFER *pBuffer, void *pData, uint16_t item_size,
                                    uint16_t max_items) {
@@ -37,7 +36,7 @@ void VOR_CircularBuffer_Initialize(VOR_CIRCULAR_BUFFER *pBuffer, void *pData, ui
 
 bool VOR_CircularBuffer_IsEmpty(VOR_CIRCULAR_BUFFER *pBuffer) {
   if (pBuffer->valid_items == 0) {
-    VOR_Log(LOG_DBG, "The Buffer is Empty! \n");
+    printf("The Buffer is Empty! \n");
     return true;
   } else {
     return false;
@@ -46,7 +45,7 @@ bool VOR_CircularBuffer_IsEmpty(VOR_CIRCULAR_BUFFER *pBuffer) {
 
 bool VOR_CircularBuffer_IsFull(VOR_CIRCULAR_BUFFER *pBuffer) {
   if (pBuffer->valid_items == pBuffer->max_items) {
-    VOR_Log(LOG_DBG, "The Buffer is Full! \n");
+    printf("The Buffer is Full! \n");
     return true;
   } else {
     return false;
@@ -55,7 +54,7 @@ bool VOR_CircularBuffer_IsFull(VOR_CIRCULAR_BUFFER *pBuffer) {
 
 int32_t VOR_CircularBuffer_Write(VOR_CIRCULAR_BUFFER *pBuffer, const void *pItem) {
   if (VOR_CircularBuffer_IsFull(pBuffer)) {
-    VOR_Log(LOG_DBG, "The Buffer is Full! \n");
+    printf("The Buffer is Full! \n");
     return -1;
   } else {
     uint16_t *wPtr = (uint16_t *)pBuffer->data + pBuffer->write_index++;
@@ -68,7 +67,7 @@ int32_t VOR_CircularBuffer_Write(VOR_CIRCULAR_BUFFER *pBuffer, const void *pItem
 
 int32_t VOR_CircularBuffer_Read(VOR_CIRCULAR_BUFFER *pBuffer, void *pItem) {
   if (VOR_CircularBuffer_IsEmpty(pBuffer)) {
-    VOR_Log(LOG_DBG, "The Buffer is Empty! \n");
+    printf("The Buffer is Empty! \n");
     return -1;
   } else {
     uint16_t *rPtr = (uint16_t *)pBuffer->data + pBuffer->read_index++;

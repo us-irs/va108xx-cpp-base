@@ -1,6 +1,5 @@
 #include "stdio.h"
-#include "vorago/common/va108xx.h"
-#include "vorago/reb/reb_log.h"
+#include "va108xx.h"
 
 // Safe memory access routine, that support possible fault recovery
 // Needs to be compiled UnOptimized
@@ -29,11 +28,11 @@ void C_HardFault_Handler(uint32_t _sp) {
   return;
 #if 0 
     uint32_t *sp = (uint32_t *)_sp; // StackPointer as a valid pointer value
-    VOR_Log(LOG_ERROR,"PC hit hardfault. \n");
-    VOR_Log(LOG_ERROR,"Snapshot of registers at failure point. \n");
+    prtinf(LOG_ERROR,"PC hit hardfault. \n");
+    printf(LOG_ERROR,"Snapshot of registers at failure point. \n");
     for(i=0; i<32; i++) {
         stackArray[i] = *sp++;
-        VOR_Log(LOG_ERROR,"%x \t", stackArray[i]);
+        printf(LOG_ERROR,"%x \t", stackArray[i]);
     }
 #endif
 }

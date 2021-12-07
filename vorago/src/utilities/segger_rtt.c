@@ -61,7 +61,7 @@ Additional information:
 ----------------------------------------------------------------------
  */
 
-#include "vorago/utilities/segger_rtt.h"
+#include "segger_rtt.h"
 
 #include <string.h>  // for memcpy
 

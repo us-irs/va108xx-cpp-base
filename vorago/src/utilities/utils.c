@@ -20,13 +20,13 @@
  *
  ****************************************************************************************/
 
-#include "vorago/utilities/utils.h"
+#include "utils.h"
 
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "vorago/common/va108xx.h"
+#include "va108xx.h"
 
 #ifndef SKIP_UTILS
 //------------------------------------------------------------------------------

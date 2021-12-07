@@ -17,7 +17,7 @@ set(CMAKE_SCRIPT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 # Set toolchain file which sets cross-compiler and ABI flags
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SCRIPT_PATH}/VA10820Toolchain.cmake")
 
-set(COMMON_PATH vor_common)
+set(CONFIG_PATH config)
 
 set(VOR_VERBOSE_LEVEL "1" CACHE STRING "Verbosity level for debug output")
 set_property(CACHE VOR_VERBOSE_LEVEL PROPERTY STRINGS 0 1 2)
@@ -31,7 +31,8 @@ if(NOT NVM1)
 endif()
 
 option(VOR_RTT_LOG "Use SEGGER RTT for logging messages" ON)
-set(VOR_CLOCK_CFG 50000000)
+# Default REB1 frequency. Change to other frequency if desired
+set(VOR_SYSTEM_CLOCK 50000000UL)
 
 set(LINK_SCRIPTS_PATH "${CMAKE_CURRENT_SOURCE_DIR}/vorago/linker")
 set(LINKER_SCRIPT_REGULAR ${LINK_SCRIPTS_PATH}/va108xx_linker.ld)
@@ -47,6 +48,8 @@ elseif(NVM2)
 else()
     set(LINKER_SCRIPT ${LINKER_SCRIPT_REGULAR})
 endif()
+
+configure_file(${CONFIG_PATH}/VORConfig.h.in VORConfig.h)
 
 # Add executable
 add_executable(${TARGET_NAME})

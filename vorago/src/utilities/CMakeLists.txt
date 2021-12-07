@@ -9,3 +9,9 @@ target_sources(${TARGET_NAME} PRIVATE
     segger_rtt.c
     utils.c
 )
+
+if(VOR_RTT_LOG)
+    target_sources(${TARGET_NAME} PRIVATE
+        segger_rtt_syscalls_gcc.c
+    )
+endif()

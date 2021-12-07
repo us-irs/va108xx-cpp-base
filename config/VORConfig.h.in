@@ -2,10 +2,9 @@
 #define CONFIG_VORCONIG_H
 
 #cmakedefine VOR_VERBOSE_LEVEL @VOR_VERBOSE_LEVEL@
+#cmakedefine VOR_SYSTEM_CLOCK @VOR_SYSTEM_CLOCK@
 
-//! Should be disabled for mission code.
-#cmakedefine01 VOR_ADD_TEST_TASKS
-#cmakedefine01 VOR_ADD_LED_TASK
+#cmakedefine01 VOR_RTT_LOG
 
 #cmakedefine NVM_BINARY_1
 #cmakedefine NVM_BINARY_2
