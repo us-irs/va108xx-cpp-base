@@ -30,6 +30,9 @@ if(NOT NVM1)
     option(NVM2 "Generate image which can be flashed to non-volatile memory at position 1" OFF)
 endif()
 
+option(VOR_RTT_LOG "Use SEGGER RTT for logging messages" ON)
+set(VOR_CLOCK_CFG 50000000)
+
 set(LINK_SCRIPTS_PATH "${CMAKE_CURRENT_SOURCE_DIR}/vorago/linker")
 set(LINKER_SCRIPT_REGULAR ${LINK_SCRIPTS_PATH}/va108xx_linker.ld)
 set(LINKER_SCRIPT_NVM1 ${LINK_SCRIPTS_PATH}/va108xx_linker_nvm_pos1.ld)

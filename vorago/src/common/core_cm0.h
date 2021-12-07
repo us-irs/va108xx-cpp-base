@@ -1,13 +1,14 @@
-/**************************************************************************/ /**
-                                                                              * @file     core_cm0.h
-                                                                              * @brief    CMSIS
-                                                                              *Cortex-M0 Core
-                                                                              *Peripheral Access
-                                                                              *Layer Header File
-                                                                              * @version  V4.30
-                                                                              * @date     20.
-                                                                              *October 2015
-                                                                              ******************************************************************************/
+/**************************************************************************/
+/**
+ * @file     core_cm0.h
+ * @brief    CMSIS
+ * Cortex-M0 Core
+ * Peripheral Access
+ * Layer Header File
+ * @version  V4.30
+ * @date     20.
+ * October 2015
+ ******************************************************************************/
 /* Copyright (c) 2009 - 2015 ARM LIMITED
 
    All rights reserved.

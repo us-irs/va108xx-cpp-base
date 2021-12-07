@@ -3,7 +3,9 @@ target_include_directories(${TARGET_NAME} PRIVATE
 )
 
 target_sources(${TARGET_NAME} PRIVATE
-    hardfault_handler.c
-    irq_va108xx.c
-    system_va108xx.c
+    circular_buffer.c
+    redirect.c
+    segger_rtt_printf.c
+    segger_rtt.c
+    utils.c
 )
