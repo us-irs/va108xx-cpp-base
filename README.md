@@ -45,3 +45,12 @@ show how to do it in the commnand line
    ```
 
 3. The debugger should now be stopped at the start of the application. Press `C` to continue
+
+# Using Eclipse
+
+Copy the `.cproject` and `.project` files from the `eclipse` folder to the repository root.
+Now open the folder in Eclipse as a project and make sure to deselect the `eclipse` folder in
+the selection Window.
+
+As long as the first two steps in the Build instructions above were performed, you should be able
+to build and debug with the hammer and debug button conveniently now.
