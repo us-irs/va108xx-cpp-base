@@ -1,9 +1,47 @@
-### Linker scripts for the Cortex-M0 core
+C/C++ template project for VA108xx based projects
+========
 
-The va108xx_linker.ld is the generic linker to load the binary into the program RAM directly.
+# Prerequisites
 
-If two binaries are located inside the program memory for failure tolerance,  separate linker
-files are needed to achieve correct ARM vectors.
+1. ARM Cross-compiler installed and added to system path
+2. CMake installed
+3. SEGGER J-Link tools installed
+4. Eclipse recommended, project files provided
 
-The va108xx_linker_nvm_pos1.ld is used to generate a binary which is written to the non-volatile
-memory of the Vorago at position 1. The code start address and IVT starts at 0x2000 instead of 0x0000.
+# Build
+
+Instructions for command line
+
+1. Create build directory
+
+   ```sh
+   make build && cd build
+   ```
+
+2. Set up build system. Depending on the OS and desired build system, you might have
+   to specify the build system explicitely (e.g. with `-G "MinGW Makefiles"` or
+   `-G "Ninja"` on Windows) instead of using the defaults
+
+   ```sh
+   cmake ..
+   ```
+
+3. Build the project
+
+   ```sh
+   cmake --build . -j
+   ```
+
+# Flashing and Debugging
+
+It is recommended to use Eclipse or VS code for convenient flashing, but the instructions here
+show how to do it in the commnand line
+
+1. Start the JLink GDB server.
+2. Run the GDB application, for example `gdb-multiarch`
+
+   ```sh
+   gdb-multiarch -q -x jlink.gdb build/va10820-template
+   ```
+
+3. The debugger should now be stopped at the start of the application. Press `C` to continue
