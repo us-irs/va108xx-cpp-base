@@ -53,6 +53,7 @@ Purpose : Low-level functions for using printf() via RTT in GCC.
 */
 
 #include <reent.h>  // required for _write_r
+#include <stdio.h>
 
 #include "segger_rtt.h"
 
@@ -62,8 +63,8 @@ Purpose : Low-level functions for using printf() via RTT in GCC.
  *
  **********************************************************************
  */
-// int _write(int file, char *ptr, int len);
-// int _write_r(struct _reent *r, int file, char *ptr, int len);
+//int _write(int file, char *ptr, int len);
+//int _write_r(struct _reent *r, int file, char *ptr, int len);
 
 /*********************************************************************
  *
