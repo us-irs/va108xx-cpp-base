@@ -10,7 +10,8 @@ C/C++ template project for VA108xx based projects
 
 # <a id="build"></a> Build
 
-Instructions for command line
+Instructions for command line. Make sure you can call the cross-compiler from the command line,
+e.g. with `arm-none-eabi-gcc -v`.
 
 1. Create build directory
 
