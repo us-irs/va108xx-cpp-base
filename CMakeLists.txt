@@ -1,5 +1,5 @@
 ################################################################################
-# CMake base support for the VA108xx devices
+# CMake base support for the VA108XX devices
 #
 # Author: R. Mueller
 ################################################################################
@@ -22,7 +22,7 @@ set(CONFIG_PATH config)
 set(VOR_VERBOSE_LEVEL "1" CACHE STRING "Verbosity level for debug output")
 set_property(CACHE VOR_VERBOSE_LEVEL PROPERTY STRINGS 0 1 2)
 
-project(va10820-template ASM C CXX)
+project(va108xx-template ASM C CXX)
 set(TARGET_NAME ${CMAKE_PROJECT_NAME})
 
 option(NVM1 "Generate image which can be flashed to non-volatile memory at position 1" OFF)
